@@ -1,0 +1,31 @@
+{
+  // always start with version 2
+  "manifest_version": 2,
+
+  "name": "My Awesome Extension",
+  "description": "This extension will do something, I hope.",
+  "version": "1.0",
+
+  // that icon deely in the chrome menu bar
+  "browser_action": {
+    // tells you what it looks like
+    "default_icon": "icon.png",
+    // tells you what it is
+    "default_popup": "popup.html"
+  },
+
+  // Only content scripts have access to page DOM
+  // in theory.
+  // Pro tip: If not in use, delete or comment out .
+  // "content_scripts": [
+  //   {
+  //     // On any site
+  //     "matches": ["<all_urls>"],
+  //     // Do this stuff
+  //     "js": ["content.js"]
+  //   }
+  // ],
+
+  // we list activeTab so content_scripts can access it
+  "permissions": ["activeTab", "storage"]
+}
