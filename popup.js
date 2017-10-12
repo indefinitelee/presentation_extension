@@ -66,24 +66,15 @@ function changeWords() {
   });
 }
 
-// function changeImgs(url, pic) {
-//   console.log("change Imgs");
-//   imgs = document.getElementsByTagName("img");
-//   console.log("images", imgs);
-//   imgs.src = "cat_pic.jpeg";
-// }
-
 document.addEventListener("DOMContentLoaded", () => {
   console.log("DOMContentLoaded");
   getCurrentTabUrl(url => {
     console.log("tab url", url);
-    var pic = "cat_pic.jpeg";
     var catifier = document.getElementById("catifier");
-    var drumpifier = document.getElementById("drumpifier");
     catifier.addEventListener("click", () => {
       console.log("meow");
-      addCats(url);
-      changeWords(url);
+      addCats();
+      changeWords();
     });
   });
 });
