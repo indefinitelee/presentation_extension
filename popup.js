@@ -59,6 +59,13 @@ function addCats() {
   });
 }
 
+function changeWords() {
+  var wordScript = `document.body.innerHTML = document.body.innerHTML.replace(/Trump/g, 'Drumpf');`;
+  chrome.tabs.executeScript({
+    code: wordScript
+  });
+}
+
 // function changeImgs(url, pic) {
 //   console.log("change Imgs");
 //   imgs = document.getElementsByTagName("img");
@@ -72,9 +79,11 @@ document.addEventListener("DOMContentLoaded", () => {
     console.log("tab url", url);
     var pic = "cat_pic.jpeg";
     var catifier = document.getElementById("catifier");
+    var drumpifier = document.getElementById("drumpifier");
     catifier.addEventListener("click", () => {
       console.log("meow");
       addCats(url);
+      changeWords(url);
     });
   });
 });
